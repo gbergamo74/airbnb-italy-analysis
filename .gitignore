@@ -1,0 +1,35 @@
+ECHO is on.
+# Python bytecode e cache
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter notebooks
+.ipynb_checkpoints/
+
+# IDE e editor
+.vscode/
+*.suo
+*.user
+*.idea/
+
+# Dati
+data/
+*.csv
+*.xlsx
+
+# Log e file temporanei
+*.log
+*.tmp
+
+# Modelli grossi (se superiore a ~10 MB)
+*.pkl
+*.dat.gz
+
+# Altri
+.DS_Store
