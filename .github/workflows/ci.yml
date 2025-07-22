@@ -25,11 +25,11 @@ jobs:
         pip install -r requirements.txt
 
 
-    - name: Run pytest if tests folder exists
+     - name: Run pytest if tests folder exists
       run: |
         if [ -d tests ]; then
           pip install pytest
-          pytest --maxfail=1 --disable-warnings -q
+          PYTHONPATH=$PWD pytest --maxfail=1 --disable-warnings -q
         else
           echo 'No tests/ dir, skipping'
         fi
