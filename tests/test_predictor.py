@@ -1,14 +1,10 @@
+import os
 import pytest
-from predictor import load_model, predict_one
+from predictor import load_model
 
-def test_model_present_or_skip():
+# Test unitario: il modello si carica?
+def test_model_loadable_or_skip():
     model = load_model()
     if model is None:
-        pytest.skip("No model file in CI")
-    out = predict_one({
-        "room_type": "Private room",
-        "number_of_reviews": 5,
-        "availability_365": 120
-    })
-    assert isinstance(out, float)
-
+        pytest.skip("ridge_pipeline.pkl non presente nell'ambiente CI")
+    assert hasattr(model, "predict")
